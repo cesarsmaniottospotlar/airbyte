@@ -108,7 +108,7 @@ streams:
       $ref: "#/definitions/retriever"
       requester:
         $ref: "#/definitions/requester"
-        path: "list/{{ config['list_id'] }}/task"
+        path: "team/{{ config['team_id'] }}/task"
         request_parameters:
           include_closed: "{{ config['include_closed_tasks']|lower }}"
           subtasks: "{{ config['include_subtasks']|lower }}"
