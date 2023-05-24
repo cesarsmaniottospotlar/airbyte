@@ -116,16 +116,14 @@ streams:
         $ref: "#/definitions/arraySelector"
       paginator:
         type: DefaultPaginator
-        page_size_option:
-          inject_into: "request_parameter"
-          field_name: "page_size"
-        pagination_strategy:
-          type: "OffsetIncrement"
-          page_size: 1
         page_token_option:
           type: RequestOption
-          field_name: "page"
-          inject_into: "request_parameter"
+          inject_into: request_parameter
+          field_name: page
+        pagination_strategy:
+          type: PageIncrement
+          page_size: 50
+          start_from_page: 1
 
 check:
   type: CheckStream
